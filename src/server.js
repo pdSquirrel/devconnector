@@ -5,6 +5,11 @@ const app = express();
 
 connectDB();
 
+// init middleware
+
+// replaces body-parser in newer versions of express
+app.use(express.json({ extended: false }));
+
 app.get('/', (req, res) => {
   res.send('API running!');
 });
